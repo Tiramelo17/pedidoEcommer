@@ -1,5 +1,7 @@
 package com.api.pedidos.services;
 
+import java.util.Optional;
+
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
@@ -23,5 +25,13 @@ public class ClienteService {
 
 	public Object findAll() {
 		return clienteRepository.findAll();
+	}
+
+	public Optional<ClienteModel> findById(Integer id) {
+		return clienteRepository.findById(id);
+	}
+	
+	public void deleteById(Integer id) {
+		clienteRepository.deleteById(id); 
 	}
 }
