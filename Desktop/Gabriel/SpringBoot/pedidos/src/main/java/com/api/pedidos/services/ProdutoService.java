@@ -1,5 +1,7 @@
 package com.api.pedidos.services;
 
+import java.util.Optional;
+
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
@@ -23,5 +25,9 @@ public class ProdutoService {
 
 	public Object findAll() {
 		return produtoRepository.findAll();
+	}
+
+	public Optional<ProdutoModel> findById(Integer id) {
+		return produtoRepository.findById(id);
 	}
 }

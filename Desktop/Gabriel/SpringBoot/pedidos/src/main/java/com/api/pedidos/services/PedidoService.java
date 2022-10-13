@@ -1,5 +1,6 @@
 package com.api.pedidos.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
@@ -25,5 +26,9 @@ public class PedidoService {
 
 	public Optional<PedidoModel> findById(Integer id) {
 		return pedidoRepository.findById(id);
+	}
+
+	public List<PedidoModel> findPedidoByClienteId(Integer codCliente) {
+		return pedidoRepository.findPedidoByClienteId(codCliente);
 	}
 }
